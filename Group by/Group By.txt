@@ -1,0 +1,17 @@
+1. Conta gli ospiti raggruppandoli per anno di nascita
+
+SELECT COUNT(`id`) AS `numero_ospiti`, 
+YEAR(`date_of_birth`) AS `anno_nascita` FROM `ospiti` 
+GROUP BY YEAR(`date_of_birth`)
+
+2. Somma i prezzi dei pagamenti raggruppandoli per status
+
+SELECT SUM(`price`) AS `somma_pagamenti`, 
+`status` FROM `pagamenti` 
+GROUP BY `status`
+
+3. Conta quante volte è stata prenotata ogni stanza
+
+SELECT COUNT(`stanza_id`) AS `numero_prenotazioni`, 
+`stanza_id` FROM `prenotazioni` 
+GROUP BY `stanza_id`;
